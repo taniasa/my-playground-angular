@@ -5,9 +5,14 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MyNavbarComponent } from './my-navbar/my-navbar.component';
+import { MyNavbarComponent } from './shared/my-navbar/my-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
+import {StyleManager} from './shared/style-manager/style-manager';
+import {ThemeStorage} from './shared/theme-picker/theme-storage/theme-storage';
+import {ThemePickerModule} from './shared/theme-picker/theme-picker';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +28,13 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ThemePickerModule,
   ],
-  providers: [],
+  providers: [
+    StyleManager,
+    ThemeStorage,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
