@@ -12,12 +12,17 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import {StyleManager} from './shared/style-manager/style-manager';
 import {ThemeStorage} from './shared/theme-picker/theme-storage/theme-storage';
 import {ThemePickerModule} from './shared/theme-picker/theme-picker';
+import { AplicacaoComponent } from './aplicacao/aplicacao.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNavbarComponent
+    MyNavbarComponent,
+    AplicacaoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,7 @@ import {ThemePickerModule} from './shared/theme-picker/theme-picker';
     MatIconModule,
     MatListModule,
     ThemePickerModule,
+    AppRoutingModule,
   ],
   providers: [
     StyleManager,
