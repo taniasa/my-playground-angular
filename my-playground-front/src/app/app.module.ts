@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavbarComponent } from './shared/my-navbar/my-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {  MatCardModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 import {StyleManager} from './shared/style-manager/style-manager';
 import {ThemeStorage} from './shared/theme-picker/theme-storage/theme-storage';
@@ -34,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
     ThemePickerModule,
     AppRoutingModule,
   ],
