@@ -8,11 +8,11 @@
 }
 
 .solution { padding: 15px;}
-
-body {
+/* Este fez sair o efeito da toolbar ver se volta o não */
+/* body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
-}
+} */
 
 .basic-container {
   padding: 30px;
