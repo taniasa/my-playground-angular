@@ -1,0 +1,61 @@
+<mat-card >
+  <mat-card-content>
+<mat-tab-group>
+  <mat-tab label="Consulta">
+    <div>
+      Table
+    </div>
+  </mat-tab>
+  <mat-tab label="Incluir">
+    <mat-card>
+      <mat-card-content>
+        <div class="my-default-container">
+          <mat-form-field>
+            <input matInput placeholder="Nome"/>
+          </mat-form-field>
+
+          <mat-form-field>
+            <textarea matInput placeholder="Descrição"></textarea>
+          </mat-form-field>
+
+          <mat-form-field >
+            <input matInput matInput placeholder="Nome arquivo"/>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <button mat-raised-button color="primary" (click)="onClick">Salvar</button>
+    </mat-card>
+
+
+  </mat-tab>
+  <mat-tab label="Alterar">
+    <div>
+      Table
+    </div>
+  </mat-tab>
+  <mat-tab label="Tab 2">
+    <ng-template mat-tab-label="Pbulicar">
+      <mat-icon>attach_file</mat-icon>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+</mat-card-content>
+</mat-card>
+<!--
+
+<div class="my-default-container">
+  <mat-form-field>
+    <input matInput placeholder="Nome"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Descrição"></textarea>
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput matInput placeholder="Nome arquivo"/>
+  </mat-form-field>
+
+</div>
+<button mat-raised-button color="primary" (click)="onClick">Salvar</button>
+ -->

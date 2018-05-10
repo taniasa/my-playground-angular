@@ -22,3 +22,13 @@
   font-size: 8pt;
   float: right;
 }
+
+
+.my-default-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.my-default-container > * {
+  width: 100%;
+}
