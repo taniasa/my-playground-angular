@@ -1,8 +1,10 @@
+import { RelatorioService } from './relatorio/relatorio.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
@@ -60,7 +62,8 @@ import { AplicacaoComponent } from './aplicacao/aplicacao.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
-
+import { RelatorioFormComponent } from './relatorio/relatorio-form/relatorio-form.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -68,10 +71,13 @@ import { RelatorioComponent } from './relatorio/relatorio.component';
     MyNavbarComponent,
     AplicacaoComponent,
     HomeComponent,
-    RelatorioComponent
+    RelatorioComponent,
+    RelatorioFormComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     FormsModule,
@@ -130,9 +136,11 @@ import { RelatorioComponent } from './relatorio/relatorio.component';
   providers: [
     StyleManager,
     ThemeStorage,
+    RelatorioService,
     {provide: LOCALE_ID, useValue: 'pt-BR'},
 
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
