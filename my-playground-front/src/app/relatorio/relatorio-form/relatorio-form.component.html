@@ -1,18 +1,20 @@
 <mat-card>
   <mat-card-content>
-    <div class="my-default-container">
+    <div class="my-default-container" [formGroup]="localForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
-        <input matInput placeholder="Nome"/>
+        <input matInput placeholder="Nome" formControlName="nome"/>
       </mat-form-field>
 
       <mat-form-field>
-        <textarea matInput placeholder="Descrição"></textarea>
+        <textarea matInput placeholder="Descrição" formControlName="descricao"></textarea>
       </mat-form-field>
 
       <mat-form-field >
-        <input matInput matInput placeholder="Nome arquivo"/>
+        <input matInput matInput placeholder="Nome do arquivo" formControlName="nomeArquivo"/>
       </mat-form-field>
     </div>
   </mat-card-content>
-  <button mat-raised-button color="primary" (click)="onClick">Salvar</button>
+  <button mat-raised-button [disabled]="localForm.pristine" color="primary" (click)="onClick">Salvar</button>
+  <button mat-raised-button [disabled]="localForm.pristine" color="primary" (click)="emitRevert()">Cancelar</button>
+
 </mat-card>
