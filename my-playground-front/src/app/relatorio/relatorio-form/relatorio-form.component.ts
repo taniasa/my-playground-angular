@@ -1,8 +1,8 @@
+import { RelatorioComponent } from './../relatorio.component';
 import { Component, OnInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { RelatorioService } from '../relatorio.service';
 import { Relatorio } from '../relatorio.model';
-
 @Component({
   selector: 'my-relatorio-form',
   templateUrl: './relatorio-form.component.html',
@@ -12,6 +12,7 @@ export class RelatorioFormComponent implements OnChanges {
   @Input() dado: Relatorio;
   @Output() revert = new EventEmitter();
   @Input() modificando: boolean = false
+  @Input() relatorioMain: RelatorioComponent
   localForm: FormGroup;
 
   constructor(
@@ -46,9 +47,11 @@ export class RelatorioFormComponent implements OnChanges {
   }
 
   emitRevert() {
-    this.rebuildForm();
+    // this.rebuildForm();
+    this.localForm.reset()
     this.modificando = false;
-
+    this.relatorioMain.selectIndexTab(0)
+    this.relatorioMain.setDefaultTab()
     this.revert.emit();
   }
 

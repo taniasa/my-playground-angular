@@ -1,6 +1,6 @@
 <mat-card >
   <mat-card-content>
-  <mat-tab-group [selectedIndex]="tabAplicacao">
+  <mat-tab-group [(selectedIndex)]="tabAplicacao">
   <mat-tab label="Consulta">
     <div class="example-header">
       <mat-form-field>
@@ -40,10 +40,10 @@
           <th mat-header-cell *matHeaderCellDef >Ações</th>
           <td *matCellDef="let row">
             <button mat-icon-button [disabled]="meuForm.modificando" (click)="emitEdit(row, meuForm)" color="primary">
-              <mat-icon aria-label="Incluir um registro">add_circle</mat-icon>
+              <mat-icon aria-label="Incluir um registro">create</mat-icon>
             </button>
-            <button mat-icon-button [disabled]="meuForm.modificando" (click)="emitRemove(row, meuForm)" color="primary">
-              <mat-icon aria-label="Excluir um registro">remove_circle</mat-icon>
+            <button mat-icon-button class=btn [disabled]="meuForm.modificando" (click)="emitRemove(row, meuForm)" color="primary">
+              <mat-icon aria-label="Excluir um registro">delete</mat-icon>
             </button>
           </td>
         </ng-container>
@@ -55,7 +55,7 @@
     </div>
   </mat-tab>
   <mat-tab [label]='labelTab'>
-    <my-relatorio-form [dado]='dado' #meuForm ></my-relatorio-form>
+    <my-relatorio-form [dado]='dado' #meuForm [relatorioMain]=this></my-relatorio-form>
   </mat-tab>
   <!-- <mat-tab label="Alterar">
     <my-relatorio-form></my-relatorio-form>

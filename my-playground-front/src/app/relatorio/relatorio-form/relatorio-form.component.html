@@ -13,8 +13,8 @@
         <input matInput matInput placeholder="Nome do arquivo" formControlName="nomeArquivo"/>
       </mat-form-field>
     </div>
+    <button mat-raised-button [disabled]="localForm.pristine" color="primary" (click)="onClick">Salvar</button>
+    <button mat-raised-button color="primary" (click)="emitRevert()">Cancelar</button>
   </mat-card-content>
-  <button mat-raised-button [disabled]="localForm.pristine" color="primary" (click)="onClick">Salvar</button>
-  <button mat-raised-button [disabled]="localForm.pristine" color="primary" (click)="emitRevert()">Cancelar</button>
 
 </mat-card>

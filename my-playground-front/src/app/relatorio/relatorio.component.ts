@@ -14,13 +14,13 @@ export class RelatorioComponent implements OnInit {
   displayedColumns = ['id', 'nome', 'nomeArquivo', 'descricao', 'acoes'];
   dataSource: MatTableDataSource<Relatorio>;
   dado: Relatorio;
+  labTabDefault: String = 'Incluir';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
   // @Input() meuForm: RelatorioFormComponent;
-  @Output() labelTab = 'Incluir'
-  @Output() tabAplicacao = 0
+  @Output() labelTab = this.labTabDefault
+  @Input() tabAplicacao = 0
   @Output() remove = new EventEmitter<{Relatorio, RelatorioFormComponent}>()
   @Output() edit = new EventEmitter<{Relatorio, RelatorioFormComponent}>()
   constructor(private service: RelatorioService) {
@@ -50,9 +50,17 @@ export class RelatorioComponent implements OnInit {
 
   emitEdit(item: Relatorio, meuForm: RelatorioFormComponent) {
     this.labelTab = 'Alterar'
-    this.tabAplicacao = 1
+    this.selectIndexTab(1)
     this.dado = item
     meuForm.modificando = true;
     this.edit.emit(item)
+  }
+
+  selectIndexTab(index: number) {
+    this.tabAplicacao = index;
+  }
+
+  setDefaultTab() {
+    this.labelTab = this.labTabDefault;
   }
 }
